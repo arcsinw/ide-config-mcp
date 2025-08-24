@@ -1,4 +1,4 @@
-# IDE 偏好设置 MCP 服务器
+# IDE 配置文件 MCP 服务器
 
 这是一个基于 Python编写的MCP Server，提供修改 IDE（目前只支持VS Code）配置文件的工具。MCP 允许大型语言模型（LLMs）直接调用这些工具来操作 IDE 设置。
 

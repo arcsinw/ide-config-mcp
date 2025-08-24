@@ -1,4 +1,4 @@
-# IDE Preference MCP Server
+# IDE Config MCP Server
 
 A Python-based MCP Server that provides tools for modifying IDE configuration files (currently supports VS Code only). MCP allows Large Language Models (LLMs) to directly call these tools to manipulate IDE settings.
 
