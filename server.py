@@ -175,8 +175,12 @@ def get_default_settings() -> str:
     except Exception as e:
         return json.dumps({"error": f"读取默认配置文件失败: {str(e)}"})
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the MCP server"""
     mcp.run(transport="stdio")
+
+if __name__ == "__main__":
+    main()
 
     # for debug only
     # mcp.run(transport="http", host="127.0.0.1", port=8000, path="/mcp")
