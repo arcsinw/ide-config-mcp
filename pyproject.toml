@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ide-config-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "IDE config MCP Python package"
 authors = [
     { name = "arcsinw", email = "your@email.com" }
