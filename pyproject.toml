@@ -12,3 +12,10 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/arcsinw/ide-config-mcp"
+Repository = "https://github.com/arcsinw/ide-config-mcp"
+
+[project.scripts]
+ide-config-mcp = "server:main"
