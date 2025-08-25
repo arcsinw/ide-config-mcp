@@ -12,8 +12,24 @@ A Python-based MCP Server that provides tools for modifying IDE configuration fi
 
 ## Installation
 
-1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
+### install uv
+
+参考https://uv.doczh.com/getting-started/installation/
+
+### config ide-config-mcp
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp"
+      ]
+    }
+  }
+}
+```
 
 ## Available Tools
 
@@ -46,6 +62,13 @@ Set VS Code configuration item by key.
 - `value`: New value for the configuration item
 
 **Returns**: Updated configuration value, or error message if update fails
+
+### get_default_settings
+Get VS Code default configuration items.
+
+**Parameters**:
+
+**Returns**: All default configurations in JSON format, including comments
 
 ## Notes
 

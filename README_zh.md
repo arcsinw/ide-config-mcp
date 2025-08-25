@@ -12,7 +12,24 @@
 
 ## 安装指南
 
+### 安装uv
 
+参考https://uv.doczh.com/getting-started/installation/
+
+### 配置ide-config-mcp
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp"
+      ]
+    }
+  }
+}
+```
 
 ## 可用工具
 
@@ -46,6 +63,12 @@
 
 **返回**：更新后的配置值，如果更新失败则返回错误信息
 
+### get_default_settings
+获取 VS Code 默认配置项。
+
+**参数**：
+
+**返回**：json格式的所有的默认配置，包含注释
 
 ## 注意事项
 
