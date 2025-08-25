@@ -18,13 +18,64 @@
 
 ### 配置ide-config-mcp
 
+- Cursor
+
 ```json
 {
   "mcpServers": {
     "ide-config-mcp": {
       "command": "uvx",
       "args": [
-        "ide-config-mcp"
+        "ide-config-mcp",
+        "Cursor"
+      ]
+    }
+  }
+}
+```
+
+- VS Code
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "Code"
+      ]
+    }
+  }
+}
+```
+
+- Trae CN
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "TraeCN"
+      ]
+    }
+  }
+}
+```
+
+- Trae
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "Trae"
       ]
     }
   }
@@ -33,12 +84,12 @@
 
 ## 可用工具
 
-### get_vscode_settings
+### get_ide_settings
 获取 VS Code 配置文件内容。
 
 **返回**：配置文件的 JSON 内容
 
-### update_vscode_settings
+### update_ide_settings
 更新 VS Code 配置文件。
 
 **参数**：
@@ -46,7 +97,7 @@
 
 **返回**：更新后的配置文件内容
 
-### get_vscode_setting_by_key
+### get_ide_setting_by_key
 按 key 获取 VS Code 配置项。
 
 **参数**：
@@ -54,7 +105,7 @@
 
 **返回**：包含配置值的字典，如果 key 不存在则返回错误信息。如果在用户设置中未找到key，会从默认设置中返回默认值。
 
-### set_vscode_setting_by_key
+### set_ide_setting_by_key
 按 key 设置 VS Code 配置项。
 
 **参数**：

@@ -14,9 +14,13 @@ A Python-based MCP Server that provides tools for modifying IDE configuration fi
 
 ### install uv
 
-参考https://uv.doczh.com/getting-started/installation/
+uv is a fast Python package manager and runner. It is used to install and run the ide-config-mcp server.
+
+https://uv.doczh.com/getting-started/installation/
 
 ### config ide-config-mcp
+
+- Cursor
 
 ```json
 {
@@ -24,7 +28,56 @@ A Python-based MCP Server that provides tools for modifying IDE configuration fi
     "ide-config-mcp": {
       "command": "uvx",
       "args": [
-        "ide-config-mcp"
+        "ide-config-mcp",
+        "Cursor"
+      ]
+    }
+  }
+}
+```
+
+- VS Code
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "Code"
+      ]
+    }
+  }
+}
+```
+
+- Trae CN
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "TraeCN"
+      ]
+    }
+  }
+}
+```
+
+- Trae
+
+```json
+{
+  "mcpServers": {
+    "ide-config-mcp": {
+      "command": "uvx",
+      "args": [
+        "ide-config-mcp",
+        "Trae"
       ]
     }
   }
@@ -33,12 +86,12 @@ A Python-based MCP Server that provides tools for modifying IDE configuration fi
 
 ## Available Tools
 
-### get_vscode_settings
+### get_ide_settings
 Get VS Code configuration file content.
 
 **Returns**: JSON content of the configuration file
 
-### update_vscode_settings
+### update_ide_settings
 Update VS Code configuration file.
 
 **Parameters**:
@@ -46,7 +99,7 @@ Update VS Code configuration file.
 
 **Returns**: Updated configuration file content
 
-### get_vscode_setting_by_key
+### get_ide_setting_by_key
 Get VS Code configuration item by key.
 
 **Parameters**:
@@ -54,7 +107,7 @@ Get VS Code configuration item by key.
 
 **Returns**: Dictionary containing the configuration value, or error message if key doesn't exist. If the key is not found in user settings, it will return the default value from default settings.
 
-### set_vscode_setting_by_key
+### set_ide_setting_by_key
 Set VS Code configuration item by key.
 
 **Parameters**:
