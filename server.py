@@ -156,12 +156,11 @@ def get_ide_setting_by_key(key: str) -> Dict[str, Any]:
         else:
             # If key not found in user settings, try to get default value from defaultSettings.json
             try:
-                default_settings_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'defaultSettings.json')
-                if os.path.exists(default_settings_path):
-                    with open(default_settings_path, 'r', encoding='utf-8') as f:
-                        default_settings = commentjson.load(f)
-                        if key in default_settings:
-                            return {key: default_settings[key]}
+                # Get default settings as string and parse with commentjson
+                default_settings_str = _get_default_setttings()
+                default_settings = commentjson.loads(default_settings_str)
+                if key in default_settings:
+                    return {key: default_settings[key]}
                 return {"error": f" failed to find default setting for key: {key}"}
             except Exception:
                 return {"error": f" failed to find default setting for key: {key}"}
@@ -189,6 +188,15 @@ def set_ide_setting_by_key(
         return {"error": f" failed to set IDE setting for key: {key}, error: {str(e)}"}
     return {key: value}
 
+def _get_default_setttings() -> str:
+    try:
+        default_settings_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'defaultSettings.json')
+        if not os.path.exists(default_settings_path):
+            return json.dumps({"error": "Default configuration file does not exist"})
+        with open(default_settings_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    except Exception as e:
+        return json.dumps({"error": f" failed to read default settings file: {str(e)}"})
 
 @mcp.tool(
     name="get_default_settings",
@@ -201,13 +209,9 @@ def get_default_settings() -> str:
         IDE's default settings in json format with comments preserved
     """
     try:
-        default_settings_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'defaultSettings.json')
-        if not os.path.exists(default_settings_path):
-            return json.dumps({"error": "Default configuration file does not exist"})
-        with open(default_settings_path, 'r', encoding='utf-8') as f:
-            return f.read()
+        return _get_default_setttings()
     except Exception as e:
-        return json.dumps({"error": f" failed to read default settings file: {str(e)}"})
+        return json.dumps({"error": f" failed to get default settings: {str(e)}"})
 
 def main():
     """Main entry point for the MCP server"""

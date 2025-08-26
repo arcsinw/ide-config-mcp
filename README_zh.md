@@ -1,4 +1,7 @@
-# IDE 配置文件 MCP 服务器
+# IDE配置 MCP 服务器
+
+![Static Badge](https://img.shields.io/badge/ide--config--mcp-PyPi-blue?link=https%3A%2F%2Fpypi.org%2Fproject%2Fide-config-mcp%2F)
+
 
 这是一个基于 Python编写的MCP Server，提供修改 IDE（目前只支持VS Code）配置文件的工具。MCP 允许大型语言模型（LLMs）直接调用这些工具来操作 IDE 设置。
 
@@ -35,6 +38,8 @@
 ```
 
 - VS Code
+
+[![Install with NPX in VS Code](https://img.shields.io/badge/VS_Code-PyPI-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=ide-config-mcp&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22ide-config-mcp%22%2C+%22Code%22%5D%7D)
 
 ```json
 {

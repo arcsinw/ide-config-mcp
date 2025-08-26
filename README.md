@@ -1,5 +1,7 @@
 # IDE Config MCP Server
 
+![Static Badge](https://img.shields.io/badge/ide--config--mcp-PyPi-blue?link=https%3A%2F%2Fpypi.org%2Fproject%2Fide-config-mcp%2F)
+
 A Python-based MCP Server that provides tools for modifying IDE configuration files (currently supports VS Code only). MCP allows Large Language Models (LLMs) to directly call these tools to manipulate IDE settings.
 
 ## Features
@@ -37,6 +39,8 @@ https://uv.doczh.com/getting-started/installation/
 ```
 
 - VS Code
+
+[![Install with NPX in VS Code](https://img.shields.io/badge/VS_Code-PyPI-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=ide-config-mcp&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22ide-config-mcp%22%2C+%22Code%22%5D%7D)
 
 ```json
 {
