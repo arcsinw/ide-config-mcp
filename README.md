@@ -1,26 +1,26 @@
-# IDE Config MCP Server
-
 ![Static Badge](https://img.shields.io/badge/ide--config--mcp-PyPi-blue?link=https%3A%2F%2Fpypi.org%2Fproject%2Fide-config-mcp%2F)
 
-A Python-based MCP Server that provides tools for modifying IDE configuration files (currently supports VS Code only). MCP allows Large Language Models (LLMs) to directly call these tools to manipulate IDE settings.
+[中文](README_zh.md) | [English](README_en.md)
 
-## Features
+这是一个基于 Python编写的MCP Server，提供修改 IDE（目前只支持VS Code）配置文件的工具。MCP 允许大型语言模型（LLMs）直接调用这些工具来操作 IDE 设置。
 
-- Get IDE configuration file content
-- Update IDE configuration files
-- Get configuration item by key
-- Set configuration item by key
-- Compliant with MCP standard, can be directly called by LLMs
+更多细节：https://juejin.cn/post/7546821135445114922
 
-## Installation
+## 功能特点
 
-### install uv
+- 获取 IDE 配置文件内容
+- 更新 IDE 配置文件
+- 按 key 获取配置项
+- 按 key 设置配置项
+- 符合 MCP 标准，可被 LLMs 直接调用
 
-uv is a fast Python package manager and runner. It is used to install and run the ide-config-mcp server.
+## 安装指南
 
-https://uv.doczh.com/getting-started/installation/
+### 安装uv
 
-### config ide-config-mcp
+参考https://uv.doczh.com/getting-started/installation/
+
+### 配置ide-config-mcp
 
 - Cursor
 
@@ -88,50 +88,50 @@ https://uv.doczh.com/getting-started/installation/
 }
 ```
 
-## Available Tools
+## 可用工具
 
 ### get_ide_settings
-Get VS Code configuration file content.
+获取 VS Code 配置文件内容。
 
-**Returns**: JSON content of the configuration file
+**返回**：配置文件的 JSON 内容
 
 ### update_ide_settings
-Update VS Code configuration file.
+更新 VS Code 配置文件。
 
-**Parameters**:
-- `settings`: Settings to update (dictionary format)
+**参数**：
+- `settings`: 要更新的设置（字典格式）
 
-**Returns**: Updated configuration file content
+**返回**：更新后的配置文件内容
 
 ### get_ide_setting_by_key
-Get VS Code configuration item by key.
+按 key 获取 VS Code 配置项。
 
-**Parameters**:
-- `key`: Configuration item key name
+**参数**：
+- `key`: 配置项 key 名称
 
-**Returns**: Dictionary containing the configuration value, or error message if key doesn't exist. If the key is not found in user settings, it will return the default value from default settings.
+**返回**：包含配置值的字典，如果 key 不存在则返回错误信息。如果在用户设置中未找到key，会从默认设置中返回默认值。
 
 ### set_ide_setting_by_key
-Set VS Code configuration item by key.
+按 key 设置 VS Code 配置项。
 
-**Parameters**:
-- `key`: Configuration item key name
-- `value`: New value for the configuration item
+**参数**：
+- `key`: 配置项 key 名称
+- `value`: 配置项的新值
 
-**Returns**: Updated configuration value, or error message if update fails
+**返回**：更新后的配置值，如果更新失败则返回错误信息
 
 ### get_default_settings
-Get VS Code default configuration items.
+获取 VS Code 默认配置项。
 
-**Parameters**:
+**参数**：
 
-**Returns**: All default configurations in JSON format, including comments
+**返回**：json格式的所有的默认配置，包含注释
 
-## Notes
+## 注意事项
 
-1. The server automatically accesses the corresponding VS Code configuration file based on the operating system:
+1. 服务器会根据操作系统自动访问对应的 VS Code 配置文件：
    - Windows: `%APPDATA%\Code\User\settings.json`
    - macOS: `~/Library/Application Support/Code/User/settings.json`
    - Linux: `~/.config/Code/User/settings.json`
 
-2. Ensure your LLM supports MCP protocol for automatic tool discovery and invocation.
+2. 确保您的 LLM 支持 MCP 协议以自动发现和调用工具。
